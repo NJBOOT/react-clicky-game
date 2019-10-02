@@ -1,0 +1,11 @@
+.navbar {
+    background: slategray;
+    font-size: 24px;
+    height: 60px;
+    float: right;
+}
+
+.navbar-text > p {
+    float: right;
+    text-align: center
+}
