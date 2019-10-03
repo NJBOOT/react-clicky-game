@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   clickCard = (id) => {
-    if (!this.state.clicked.includes(id)){
+    if (!this.state.clicked.includes(id)) {
       // let clickedArray = this.state.clicked.push(id)
       let clickedArray = [...this.state.clicked, id]
       this.incrementScore();
@@ -41,12 +41,12 @@ class App extends Component {
     this.setState({
       score: newScore
     })
-    if (newScore > this.state.highScore){
+    if (newScore > this.state.highScore) {
       this.setState({
         highScore: newScore
       })
     }
-    if (newScore === 12){
+    if (newScore === 12) {
       this.setState({
         gameOver: true
       })
@@ -69,15 +69,17 @@ class App extends Component {
       <Wrapper>
         <StickyHeader score={this.state.score} highScore={this.state.highScore} />
         <Header />
-        <div className="img-container">
-          {this.state.cards.map(friend => (
-            <Card
-              id={friend.id}
-              key={friend.id}
-              image={friend.image}
-              clickCard={this.clickCard}
-            />
-          ))}
+        <div className="container">
+          <div className="img-container">
+            {this.state.cards.map(friend => (
+              <Card
+                id={friend.id}
+                key={friend.id}
+                image={friend.image}
+                clickCard={this.clickCard}
+              />
+            ))}
+          </div>
         </div>
       </Wrapper>
     )
